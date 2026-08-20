@@ -1,0 +1,19 @@
+body {
+    background-color:black;
+    font-family: "Terminus",  monospace;
+}
+h1 {
+    color: rgb(135, 255, 247);
+}
+p {
+    color: rgb(135, 255, 247);
+}
+button {
+    border-radius: 12px;
+    background-color: rgb(135, 255, 247);
+    border: none;
+    text-align: center;
+}
+img {
+    border-radius: 25px;
+}
