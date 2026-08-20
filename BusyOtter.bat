@@ -7,9 +7,9 @@ pause
 cls
 goto welcome
 :welcome
-echo ---------
-echo BusyOtter
-echo ---------
+echo -----------
+echo ^|BusyOtter^|
+echo -----------
 goto cli
 :cmds
 set /p "cmd=BusyOtter$ "
@@ -22,6 +22,10 @@ if %cmd% == ls goto ls
 if %cmd% == clear goto clear
 if %cmd% == info goto info
 if %cmd% == 67 goto 67
+if %cmd% == color-red goto red
+if %cmd% == color-blue goto blue
+if %cmd% == color-green goto green
+if %cmd% == color-reset goto reset
 goto cli
 :cli
 goto cmds
@@ -31,11 +35,19 @@ ipconfig
 ping google.com
 goto cli
 :ver
-echo BusyOtter version 0.0.1 STABLE
+echo BusyOtter version 0.0.2 RC1
 goto cli
 :fetch
+echo  ____                   ___  _   _
+echo ^| __ ) _   _ ___ _   _ / _ \^| ^|_^| ^|_ ___ _ __
+echo ^|  _ \^| ^| ^| / __^| ^| ^| ^| ^| ^| ^| __^| __/ _ \ '__^|
+echo ^| ^|_) ^| ^|_^| \__ \ ^|_^| ^| ^|_^| ^| ^|_^| ^|^|  __/ ^|
+echo ^|____/ \__,_^|___/\__, ^|\___/ \__^|\__\___^|_^|
+echo                  ^|___/
 echo BusyOtter version:
-echo BusyOtter 0.0.1 STABLE
+echo BusyOtter 0.0.2 RC1
+echo user logged in:
+echo %USERNAME%
 echo windows version:
 ver
 echo language written in:
@@ -51,6 +63,7 @@ echo ls *lists filesand directories in the directory busyotter is in*
 echo exit *terminates the BusyOtter script*
 echo clear *clears the screen*
 echo info *shows information about the lisence and github repo*
+echo color- *you can add red or blue or green afther color to get those colors or reset to go to white*
 goto cli
 :exit
 exit
@@ -68,3 +81,15 @@ goto cli
 :67
 echo go fuck yourself!
 exit
+:red
+color 4
+goto cli
+:blue
+color 1
+goto cli
+:green
+color 2
+goto cli
+:reset
+color 7
+goto cli
